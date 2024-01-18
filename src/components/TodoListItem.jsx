@@ -1,22 +1,30 @@
-function TodoListItem({todo}) {
+function TodoListItem({todo, setTodos}) {
     const { id, content, is_checked }  = todo 
 
-    const onDelete = () => {
-        fetch(`https://todo-deploy241.fly.dev/api/v1/todos/${id}`,{
+    const onDelete = async () => {
+        await fetch(`https://todo-deploy20240119.fly.dev/api/v1/todos/${id}`, {
             method: 'DELETE'
         })
+
+        await fetch("https://todo-deploy20240119.fly.dev/api/v1/todos")
+            .then((res) => res.json())
+            .then((result) => setTodos(result.data));
     }
 
-    const onToggle = () => {
-        fetch(`https://todo-deploy241.fly.dev/api/v1/todos/${id}`,{
+    const onToggle = async () => {
+        await fetch(`https://todo-deploy20240119.fly.dev/api/v1/todos/${id}`, {
             method: 'PATCH',
-            headers:{
-                "Content-Type" : "application/json",
+            headers: {
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 is_checked: !is_checked
             })
         })
+
+        await fetch("https://todo-deploy20240119.fly.dev/api/v1/todos")
+            .then((res) => res.json())
+            .then((result) => setTodos(result.data));
     }
 
     return ( 
