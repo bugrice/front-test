@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './styles.css';
 
 function TodoInsert({setTodos}) {
     const [text, setText] = useState('')
@@ -31,17 +32,17 @@ function TodoInsert({setTodos}) {
     }
 
     return ( 
-        <div>
-            <form onSubmit={onSubmit}>
-               <input 
-                    placeholder="할 일을 입력하세요."
-                    type="text"
-                    value={text}
-                    onChange={onChange}
-               /> 
-               <button type="submit">저장</button>
-            </form>
-        </div> 
+        <div className="form-container">
+                    <form onSubmit={onSubmit}>
+                    <input 
+                            placeholder="할 일을 입력하세요."
+                            type="text"
+                            value={text}
+                            onChange={onChange}
+                    /> 
+                    <button type="submit">저장</button>
+                    </form>
+                </div> 
     );
 }
 

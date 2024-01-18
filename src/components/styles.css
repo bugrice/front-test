@@ -1,0 +1,110 @@
+/* TodoInsert 스타일 */
+.form-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center; /* 가운데 정렬을 위해 수정 */
+    align-items: center;
+    text-align: center; /* 입력 칸과 버튼 가운데 정렬을 위해 추가 */
+}
+
+.form-container input {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    outline: none;
+}
+
+.form-container button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.form-container button:hover {
+    background-color: #2980b9;
+}
+
+/* TodoList 스타일 */
+.todo-list-container {
+    margin-bottom: 20px;
+    max-width: 400px; /* 변경된 부분: 최대 너비 설정 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* TodoListItem 스타일 */
+.todo-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #2c3e50; /* 변경된 부분: 검정색 배경 */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.todo-item span {
+    flex: 1;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #fff; /* 변경된 부분: 텍스트 색상을 흰색으로 */
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #e74c3c; /* 변경된 부분: 완료된 항목 색상을 빨강으로 */
+}
+
+.checkbox {
+    margin-right: 10px;
+}
+
+.delete-button,
+.complete-button {
+    margin-left: 10px;
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.delete-button {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+.complete-button {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.complete-button:hover {
+    background-color: #27ae60;
+}
+
+/* TodoTemplate 스타일 */
+.template-container {
+    margin-top: 50px;
+    text-align: center;
+    background-color: #b1b1b1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.template-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+}

@@ -1,3 +1,5 @@
+import './styles.css';
+
 function TodoListItem({todo, setTodos}) {
     const { id, content, is_checked }  = todo 
 
@@ -28,10 +30,10 @@ function TodoListItem({todo, setTodos}) {
     }
 
     return ( 
-        <div style={{ textDecoration: is_checked ? 'line-through' : 'none' }}>
-            <input type="checkbox" checked={is_checked} onChange={() => onToggle(id)} />
-            {id}<span>번 : {content}</span>
-            <button onClick={() => onDelete(id)}>삭제</button>
+        <div className={`todo-item ${is_checked ? 'completed' : ''}`}>
+        <   input type="checkbox" className="checkbox" checked={is_checked} onChange={() => onToggle(id)} />
+            <span>{id}번 : {content}</span>
+            <button className="delete-button" onClick={() => onDelete(id)}>삭제</button>
         </div> 
     );
 }
