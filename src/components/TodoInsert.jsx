@@ -1,8 +1,20 @@
 import { useState } from "react";
 
-function TodoInsert({ onInsert }) {
+function TodoInsert({ }) {
 
     const [text, setText] = useState('')
+
+    const onInsert = (text) => {
+        fetch(`https://todo-deploy241.fly.dev/api/v1/todos`,{
+            method: 'POST',
+            headers:{
+                "Content-Type" : "application/json",
+            },
+            body: JSON.stringify({
+                content: text
+            })
+        })
+    }
 
     const onChange = (e) => {
         console.log(e.target.value)
